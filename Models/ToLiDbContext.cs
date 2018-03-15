@@ -8,6 +8,10 @@ namespace ToLiAPI.Models
         public int Id { get; set; }
     }
 
+    public class ConstEntity {
+        public String Id { get; set; }
+    }
+
     public partial class ToLiDbContext : DbContext
     {
         public virtual DbSet<AppliedParameters> AppliedParameters { get; set; }
@@ -24,6 +28,31 @@ namespace ToLiAPI.Models
         public virtual DbSet<Characters> Characters { get; set; }
         public virtual DbSet<CoinShopItemContents> CoinShopItemContents { get; set; }
         public virtual DbSet<CoinShopItems> CoinShopItems { get; set; }
+        public virtual DbSet<ConstBattles> ConstBattles { get; set; }
+        public virtual DbSet<ConstBgScroll> ConstBgScroll { get; set; }
+        public virtual DbSet<ConstChangeCostume> ConstChangeCostume { get; set; }
+        public virtual DbSet<ConstCharacters> ConstCharacters { get; set; }
+        public virtual DbSet<ConstCharges> ConstCharges { get; set; }
+        public virtual DbSet<ConstDecks> ConstDecks { get; set; }
+        public virtual DbSet<ConstEquipmentsortfilter> ConstEquipmentsortfilter { get; set; }
+        public virtual DbSet<ConstFriend> ConstFriend { get; set; }
+        public virtual DbSet<ConstGamedatas> ConstGamedatas { get; set; }
+        public virtual DbSet<ConstGashaConfiguration> ConstGashaConfiguration { get; set; }
+        public virtual DbSet<ConstGashaPerformancePatterns> ConstGashaPerformancePatterns { get; set; }
+        public virtual DbSet<ConstGashaPerformanceRate> ConstGashaPerformanceRate { get; set; }
+        public virtual DbSet<ConstGashaPerformanceResultScene> ConstGashaPerformanceResultScene { get; set; }
+        public virtual DbSet<ConstGashaPerformanceTutorialPatterns> ConstGashaPerformanceTutorialPatterns { get; set; }
+        public virtual DbSet<ConstGashaSeTable> ConstGashaSeTable { get; set; }
+        public virtual DbSet<ConstGift> ConstGift { get; set; }
+        public virtual DbSet<ConstItemExchange> ConstItemExchange { get; set; }
+        public virtual DbSet<ConstMenus> ConstMenus { get; set; }
+        public virtual DbSet<ConstMypage> ConstMypage { get; set; }
+        public virtual DbSet<ConstPush> ConstPush { get; set; }
+        public virtual DbSet<ConstSystems> ConstSystems { get; set; }
+        public virtual DbSet<ConstTexts> ConstTexts { get; set; }
+        public virtual DbSet<ConstUnison> ConstUnison { get; set; }
+        public virtual DbSet<ConstUserdatas> ConstUserdatas { get; set; }
+        public virtual DbSet<ConstUserTeam> ConstUserTeam { get; set; }
         public virtual DbSet<ContractRewards> ContractRewards { get; set; }
         public virtual DbSet<Contracts> Contracts { get; set; }
         public virtual DbSet<DaisukiVideos> DaisukiVideos { get; set; }
@@ -794,6 +823,308 @@ namespace ToLiAPI.Models
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnName("updated_at")
                     .HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<ConstBattles>(entity =>
+            {
+                entity.ToTable("const_battles");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstBgScroll>(entity =>
+            {
+                entity.ToTable("const_bg_scroll");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstChangeCostume>(entity =>
+            {
+                entity.ToTable("const_change_costume");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstCharacters>(entity =>
+            {
+                entity.ToTable("const_characters");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstCharges>(entity =>
+            {
+                entity.ToTable("const_charges");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstDecks>(entity =>
+            {
+                entity.ToTable("const_decks");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstEquipmentsortfilter>(entity =>
+            {
+                entity.ToTable("const_equipmentsortfilter");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstFriend>(entity =>
+            {
+                entity.ToTable("const_friend");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGamedatas>(entity =>
+            {
+                entity.ToTable("const_gamedatas");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaConfiguration>(entity =>
+            {
+                entity.ToTable("const_gasha_configuration");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaPerformancePatterns>(entity =>
+            {
+                entity.ToTable("const_gasha_performance_patterns");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaPerformanceRate>(entity =>
+            {
+                entity.ToTable("const_gasha_performance_rate");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaPerformanceResultScene>(entity =>
+            {
+                entity.ToTable("const_gasha_performance_result_scene");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaPerformanceTutorialPatterns>(entity =>
+            {
+                entity.ToTable("const_gasha_performance_tutorial_patterns");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGashaSeTable>(entity =>
+            {
+                entity.ToTable("const_gasha_se_table");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstGift>(entity =>
+            {
+                entity.ToTable("const_gift");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstItemExchange>(entity =>
+            {
+                entity.ToTable("const_item_exchange");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstMenus>(entity =>
+            {
+                entity.ToTable("const_menus");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstMypage>(entity =>
+            {
+                entity.ToTable("const_mypage");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstPush>(entity =>
+            {
+                entity.ToTable("const_push");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstSystems>(entity =>
+            {
+                entity.ToTable("const_systems");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstTexts>(entity =>
+            {
+                entity.ToTable("const_texts");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Text)
+                    .HasColumnName("text")
+                    .HasColumnType("ntext");
+            });
+
+            modelBuilder.Entity<ConstUnison>(entity =>
+            {
+                entity.ToTable("const_unison");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstUserdatas>(entity =>
+            {
+                entity.ToTable("const_userdatas");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<ConstUserTeam>(entity =>
+            {
+                entity.ToTable("const_user_team");
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasMaxLength(255)
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Value).HasColumnName("value");
             });
 
             modelBuilder.Entity<ContractRewards>(entity =>
