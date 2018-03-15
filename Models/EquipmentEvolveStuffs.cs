@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class EquipmentEvolveStuffs
+    public partial class EquipmentEvolveStuffs : Entity
     {
-        public int Id { get; set; }
+        
         public int? EquipmentId { get; set; }
         public int Num { get; set; }
         public int EvolveStuffId { get; set; }

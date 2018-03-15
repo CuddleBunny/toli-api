@@ -4,6 +4,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ToLiAPI.Models
 {
+    public class Entity {
+        public int Id { get; set; }
+    }
+
     public partial class ToLiDbContext : DbContext
     {
         public virtual DbSet<AppliedParameters> AppliedParameters { get; set; }

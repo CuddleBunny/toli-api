@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class QuestCollects
+    public partial class QuestCollects : Entity
     {
-        public int Id { get; set; }
+        
         public string Collectable1Type { get; set; }
         public int Collectable1Id { get; set; }
         public int Collectable1Quantity { get; set; }

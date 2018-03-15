@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class LimitupAps
+    public partial class LimitupAps : Entity
     {
-        public int Id { get; set; }
+        
         public byte Rarity { get; set; }
         public int Count { get; set; }
         public int Ap { get; set; }

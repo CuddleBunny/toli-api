@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class TipGroups
+    public partial class TipGroups : Entity
     {
-        public int Id { get; set; }
+        
         public int Groups { get; set; }
         public int TipId { get; set; }
         public DateTime? CreatedAt { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class AreaAvailables
+    public partial class AreaAvailables : Entity
     {
-        public int Id { get; set; }
+        
         public int AreaId { get; set; }
         public byte Wday { get; set; }
         public TimeSpan WdayStartAt { get; set; }

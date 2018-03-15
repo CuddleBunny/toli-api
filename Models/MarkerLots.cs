@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class MarkerLots
+    public partial class MarkerLots : Entity
     {
-        public int Id { get; set; }
+        
         public int? Table1Rate { get; set; }
         public int? Table2Rate { get; set; }
         public int? Table3Rate { get; set; }

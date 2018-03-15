@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class HelpTexts
+    public partial class HelpTexts : Entity
     {
-        public int Id { get; set; }
+        
         public int HelpCategoryId { get; set; }
         public int DisplayOrder { get; set; }
         public string Name { get; set; }

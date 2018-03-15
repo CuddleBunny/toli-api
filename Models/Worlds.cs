@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Worlds
+    public partial class Worlds : Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public int PrevWorldId { get; set; }
         public int? BasePosX { get; set; }

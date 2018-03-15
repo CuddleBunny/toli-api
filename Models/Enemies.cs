@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Enemies
+    public partial class Enemies : Entity
     {
-        public int Id { get; set; }
+        
         public int EnemyUnitId { get; set; }
         public string Name { get; set; }
         public int AttackType { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class CharacterPassiveSkills
+    public partial class CharacterPassiveSkills : Entity
     {
-        public int Id { get; set; }
+        
         public int? CharacterId { get; set; }
         public int? PassiveSkillId { get; set; }
         public int? DefeatCount { get; set; }

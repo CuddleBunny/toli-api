@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class ErrorCodes
+    public partial class ErrorCodes : Entity
     {
-        public int Id { get; set; }
+        
         public string ErrorClass { get; set; }
         public string Description { get; set; }
         public string DescriptionEn { get; set; }

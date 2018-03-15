@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class AppliedParameters
+    public partial class AppliedParameters : Entity
     {
-        public int Id { get; set; }
+        
         public string AppliedType { get; set; }
         public double? Coefficient { get; set; }
         public DateTime? CreatedAt { get; set; }

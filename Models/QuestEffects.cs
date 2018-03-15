@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class QuestEffects
+    public partial class QuestEffects : Entity
     {
-        public int Id { get; set; }
+        
         public int Element { get; set; }
         public int HpPercentage { get; set; }
         public int AtkPercentage { get; set; }

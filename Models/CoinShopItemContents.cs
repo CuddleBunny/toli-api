@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class CoinShopItemContents
+    public partial class CoinShopItemContents : Entity
     {
-        public int Id { get; set; }
+        
         public int CoinShopItemId { get; set; }
         public int ItemId { get; set; }
         public int Quantity { get; set; }

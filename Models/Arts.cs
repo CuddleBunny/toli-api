@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Arts
+    public partial class Arts : Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public string Description { get; set; }
         public int MoveEffect { get; set; }

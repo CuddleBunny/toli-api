@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class KouhakuBuffs
+    public partial class KouhakuBuffs : Entity
     {
-        public int Id { get; set; }
+        
         public string Description { get; set; }
         public int? BuffType { get; set; }
         public int? ElementKind { get; set; }

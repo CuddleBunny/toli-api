@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class LeaderSkills
+    public partial class LeaderSkills : Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public string Description { get; set; }
         public int LeaderSkillEffectType { get; set; }

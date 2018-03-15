@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class LimitupCharacterRequirements
+    public partial class LimitupCharacterRequirements : Entity
     {
-        public int Id { get; set; }
+        
         public int RarityMax { get; set; }
         public int RarityMin { get; set; }
         public byte Slash { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Pages
+    public partial class Pages : Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public string Scroll { get; set; }
         public DateTime? CreatedAt { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Series
+    public partial class Series : Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
         public string Abbrev { get; set; }
         public DateTime? CreatedAt { get; set; }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Characters
+    public partial class Characters : Entity
     {
-        public int Id { get; set; }
+        
         public int UnitId { get; set; }
         public int LimitmaxUnitId { get; set; }
         public string Name { get; set; }

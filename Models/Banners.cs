@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Banners
+    public partial class Banners : Entity
     {
-        public int Id { get; set; }
+        
         public string Path { get; set; }
         public string LinkTo { get; set; }
         public int Priority { get; set; }

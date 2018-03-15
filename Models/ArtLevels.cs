@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class ArtLevels
+    public partial class ArtLevels : Entity
     {
-        public int Id { get; set; }
+        
         public int? GrowType { get; set; }
         public int? Lv { get; set; }
         public int? NextExp { get; set; }

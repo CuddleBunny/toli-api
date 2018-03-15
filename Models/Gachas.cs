@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class Gachas
+    public partial class Gachas : Entity
     {
-        public int Id { get; set; }
+        
         public string Type { get; set; }
         public int Price { get; set; }
         public string Name { get; set; }

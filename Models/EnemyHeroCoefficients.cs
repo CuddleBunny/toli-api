@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToLiAPI.Models
 {
-    public partial class EnemyHeroCoefficients
+    public partial class EnemyHeroCoefficients : Entity
     {
-        public int Id { get; set; }
+        
         public int QuestId { get; set; }
         public int MinLv { get; set; }
         public int MaxLv { get; set; }
