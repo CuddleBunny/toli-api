@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NSwag.AspNetCore;
+using System.Reflection;
+using NJsonSchema;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +40,11 @@ namespace ToLiAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, new SwaggerUiSettings() {
+                DefaultPropertyNameHandling = PropertyNameHandling.CamelCase,
+                ExcludedTypeNames = new[] { "Api" }
+            });
 
             app.UseMvcWithDefaultRoute();
             app.UseDefaultFiles();
