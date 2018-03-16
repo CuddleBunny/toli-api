@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using ToLiAPI.Models;
 
 namespace ToLiAPI {
+    [Route("api/[controller]")]
     public class UtilityController : Controller {
         readonly ToLiDbContext dataContext;
         
@@ -18,7 +19,9 @@ namespace ToLiAPI {
         public UtilityController(ToLiDbContext dataContext) {
             this.dataContext = dataContext;
         }
-        public async Task<JsonResult> JPUnitNameFinder() {
+
+        [HttpGet("[action]/{shrink?}")]
+        public async Task<JsonResult> JPUnitNameFinder([FromRoute] Boolean? shrink) {
             var wikiaApiCall = "http://tales-of-link.wikia.com/api/v1/Articles/List?category=JP_Units&limit=600";
             List<WikiaResponse> wikiaJpUnits = new List<WikiaResponse>();
 
@@ -35,6 +38,28 @@ namespace ToLiAPI {
                 .Include(c => c.Art)
                 .Include(c => c.EvolveCharacter)
                 .Where(c => ids.Any(id => id == c.UnitId));
+
+            if(shrink.HasValue && shrink.Value) {
+                return Json(jpUnits.Select(u => new {
+                    UnitId = u.UnitId,
+                    Name = u.Name,
+                    NameEn = u.NameEn,
+                    Rarity = u.Rarity,
+                    LeaderSkillName = u.LeaderSkill.Name,
+                    LeaderSkillDescription = u.LeaderSkill.Description,
+                    ActiveSkillName = u.SkillName,
+                    ActiveSkillDescription = u.Skill.Description,
+                    ArteName = u.Art.Name,
+                    ArteDescription = u.Art.Description,
+                    HpInit = u.HpInit,
+                    HpMax = u.HpMax,
+                    AtkInit = u.AtkInit,
+                    AtkMax = u.AtkMax,
+                    RcvInit = u.HealInit,
+                    RcvMax = u.HealMax,
+                    AwakeningUnitId = u.EvolveCharacterId
+                }));
+            }
 
             return Json(jpUnits);
         }
