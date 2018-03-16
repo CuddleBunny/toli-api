@@ -30,11 +30,14 @@ namespace ToLiAPI.Models
         public int MotionDamage { get; set; }
         public int MotionWait { get; set; }
         public int LeaderSkillId { get; set; }
+        public LeaderSkills LeaderSkill { get; set; }
         public string SkillName { get; set; }
         public int SkillId { get; set; }
+        public Skills Skill { get; set; }
         public int Link { get; set; }
         public int SpArtId { get; set; }
         public int ArtId { get; set; }
+        public Arts Art { get; set; }
         public int ArtGrowType { get; set; }
         public int Element { get; set; }
         public int HpInit { get; set; }
@@ -47,6 +50,7 @@ namespace ToLiAPI.Models
         public int ArtProbInit { get; set; }
         public int BonusCharacterId { get; set; }
         public int? EvolveCharacterId { get; set; }
+        public Characters EvolveCharacter { get; set; }
         public int EvolutionType { get; set; }
         public int RequirementId { get; set; }
         public byte IsAvailable { get; set; }
