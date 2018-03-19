@@ -63,6 +63,11 @@ namespace ToLiAPI {
 
             return Json(jpUnits);
         }
+
+        [HttpGet("[action]/{id}")]
+        public async Task<JsonResult> FindEnemiesByEnemyUnitId([FromRoute] int id) {
+            return Json(await dataContext.Enemies.Where(e => e.EnemyUnitId == id).ToListAsync());
+        }
     }
 
     class WikiaResponse {
