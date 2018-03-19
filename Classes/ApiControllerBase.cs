@@ -20,6 +20,13 @@ namespace ToLiAPI {
         [HttpGet]
         public async Task<JsonResult> GetAll([FromQuery] ApiQuery queryOptions) {
             IQueryable<T> query = data.OrderBy(e => e.Id);
+            
+            if(queryOptions.Include.HasValue && queryOptions.Include.Value) {
+                var entityType = dataContext.Model.FindEntityType(typeof(T));
+                foreach(var navigation in entityType.GetNavigations()) {
+                    query = query.Include(navigation.Name);
+                }
+            }
 
             if(queryOptions.Offset.HasValue)
                 query = query.Skip(queryOptions.Offset.Value);
