@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NSwag.Annotations;
+using ToLiAPI.Api;
 using ToLiAPI.Models;
 
 namespace ToLiAPI {
-    public class ApiController<T> : Controller where T : Entity, new() {
+    public abstract class ApiController<T> : Controller where T : Entity, new() {
         protected readonly DbSet<T> data;
         protected readonly ToLiDbContext dataContext;
         
@@ -17,8 +18,16 @@ namespace ToLiAPI {
         }
 
         [HttpGet]
-        public async Task<JsonResult> Get() {
-            return Json(await data.ToListAsync());
+        public async Task<JsonResult> GetAll([FromQuery] ApiQuery queryOptions) {
+            IQueryable<T> query = data.OrderBy(e => e.Id);
+
+            if(queryOptions.Offset.HasValue)
+                query = query.Skip(queryOptions.Offset.Value);
+
+            if(queryOptions.Limit.HasValue)
+                query = query.Take(queryOptions.Limit.Value);
+
+            return Json(await query.ToListAsync());
         }
 
         [HttpGet("{id}")]
