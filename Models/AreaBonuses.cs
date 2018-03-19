@@ -7,6 +7,7 @@ namespace ToLiAPI.Models
     {
         
         public int AreaId { get; set; }
+        public Areas Area { get; set; }
         public byte BonusType { get; set; }
         public byte Wday { get; set; }
         public TimeSpan WdayStartAt { get; set; }

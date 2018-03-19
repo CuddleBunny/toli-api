@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ToLiAPI.Models
 {
@@ -65,5 +66,9 @@ namespace ToLiAPI.Models
         public int UnisonEffect { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        [ForeignKey("CharacterId")]
+        public List<CharacterResultMessages> CharacterResultMessages { get; set; }
+        [ForeignKey("CharacterId")]
+        public ICollection<CharacterPassiveSkills> CharacterPassiveSkills { get; set; }
     }
 }

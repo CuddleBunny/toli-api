@@ -18,8 +18,25 @@ namespace ToLiAPI {
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetAll([FromQuery] ApiQuery queryOptions) {
-            IQueryable<T> query = data.OrderBy(e => e.Id);
+        public virtual async Task<JsonResult> GetAll([FromQuery] ApiQuery queryOptions) {
+            var query = ApplyFilters(data, queryOptions);
+
+            return Json(await query.ToListAsync());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<JsonResult> Get([FromRoute] int id) {
+            return Json(await data.Where(item => item.Id == id).FirstOrDefaultAsync());
+        }
+
+        protected IQueryable<T> ApplyFilters(IQueryable<T> query, ApiQuery queryOptions) {
+            query = data.OrderBy(e => e.Id);
+
+            if(queryOptions.Offset.HasValue)
+                query = query.Skip(queryOptions.Offset.Value);
+
+            if(queryOptions.Limit.HasValue)
+                query = query.Take(queryOptions.Limit.Value);
             
             if(queryOptions.Include.HasValue && queryOptions.Include.Value) {
                 var entityType = dataContext.Model.FindEntityType(typeof(T));
@@ -28,18 +45,7 @@ namespace ToLiAPI {
                 }
             }
 
-            if(queryOptions.Offset.HasValue)
-                query = query.Skip(queryOptions.Offset.Value);
-
-            if(queryOptions.Limit.HasValue)
-                query = query.Take(queryOptions.Limit.Value);
-
-            return Json(await query.ToListAsync());
-        }
-
-        [HttpGet("{id}")]
-        public async Task<JsonResult> Get([FromRoute] int id) {
-            return Json(await data.Where(item => item.Id == id).FirstOrDefaultAsync());
+            return query;
         }
 
         /* TODO: Let authenticated users add data?

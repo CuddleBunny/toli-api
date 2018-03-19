@@ -70,12 +70,6 @@ namespace ToLiAPI
     }
 
 	[Route("api/[controller]")]
-    public class CharactersController : ApiController<Characters>
-    {
-        public CharactersController(ToLiDbContext dataContext) : base(dataContext, dataContext.Characters) { }
-    }
-
-	[Route("api/[controller]")]
     public class CoinShopItemContentsController : ApiController<CoinShopItemContents>
     {
         public CoinShopItemContentsController(ToLiDbContext dataContext) : base(dataContext, dataContext.CoinShopItemContents) { }

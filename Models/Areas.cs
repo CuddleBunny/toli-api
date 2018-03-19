@@ -10,7 +10,9 @@ namespace ToLiAPI.Models
         public string Description { get; set; }
         public string HelpContents { get; set; }
         public int WorldId { get; set; }
+        public Worlds World { get; set; }
         public int PrevAreaId { get; set; }
+        public Areas PrevArea { get; set; }
         public int BackgroundId { get; set; }
         public int? DrawPosX { get; set; }
         public int? DrawPosY { get; set; }
